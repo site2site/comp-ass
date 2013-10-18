@@ -68,7 +68,10 @@ function onOpen() {
 	    var oc = occupied( 0, this.value );
 	    if(oc == true){
 	      console.log( 'occupied fsr 0' );
-	    }    
+	      sb.send("seat", "boolean", "true");
+	    }else{
+	    	sb.send("seat", "boolean", "false");
+	    }   
 	  });
 
 
@@ -86,6 +89,9 @@ function onOpen() {
 	    var oc = occupied( 1, this.value );
 	    if(oc == true){
 	      console.log( 'occupied fsr 1' );
+	      sb.send("back", "boolean", "true");
+	    }else{
+	    	sb.send("back", "boolean", "false");
 	    }
 	  });
 
