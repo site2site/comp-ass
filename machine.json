@@ -1,0 +1,6 @@
+{
+  "name": "comp-ass",
+  "description": "A chair that registers occupancy and direction",
+  "server": "server.sitetosite.co",
+  "location": "Studio-X NYC"
+}

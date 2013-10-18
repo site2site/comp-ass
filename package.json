@@ -1,0 +1,21 @@
+{
+    "name": "comp-ass",
+    "description": "A chair that registers occupancy and direction",
+    "version": "0.0.1",
+    "author": {
+        "name": "Jim Stoddart <jim.stoddart@gmail.com>",
+        "email": "jim.stoddart@gmail.com"
+    },
+    "contributors": [
+        { "name": "Kate Samuels", "email": "<kjs2162@columbia.edu>" },
+        { "name": "Allen Ghaida", "email": "<asg2205@columbia.edu>" }
+    ],
+    "dependencies": {
+        "ws": "*",
+        "colors": "*",
+        "johnny-five": "*"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    }
+}
