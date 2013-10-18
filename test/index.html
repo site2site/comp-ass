@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Comp-ass Visualization</title>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" src="js/jq.js"></script>
+	<script type="text/javascript" src="js/sb-1.3.0.js"></script>
+    <script type="text/javascript">
+
+		$(window).on("load", setup);
+	      
+		// Spacebrew Object
+		var sb
+			, app_name = "comp-ass visualization"
+			;
+
+		/**
+	     * setup Configure spacebrew connection and adds the mousedown listener.
+	     */
+		function setup (){
+
+			// create spacebrew client object
+			sb = new Spacebrew.Client("server.sitetosite.co", {reconnect:true});
+
+			// set the base description
+			sb.name(app_name);
+			sb.description("Comp-ass visualization");
+
+			// configure the publication and subscription feeds
+			sb.addSubscribe( "seat", "boolean" );
+			sb.addSubscribe( "back", "boolean" );
+
+			// override Spacebrew events - this is how you catch events coming from Spacebrew
+			sb.onBooleanMessage = booleanHandler;
+			sb.onOpen = onOpen;
+
+			// connect to spacbrew
+			sb.connect();
+		}	
+
+		/**
+		 * Function that is called when Spacebrew connection is established
+		 */
+		function onOpen() {
+			var message = "Connected as <strong>" + sb.name() + "</strong>. ";
+			if (sb.name() === app_name) {
+				message += "<br>You can customize this app's name in the query string by adding <strong>name=your_app_name</strong>."
+			}
+			$("#name").html( message );
+		}
+
+		
+
+		/**
+		 * onStringMessage Function that is called whenever new spacebrew string messages are received.
+		 *          It accepts two parameters:
+		 * @param  {String} name    Holds name of the subscription feed channel
+		 * @param  {String} value  Holds value received from the subscription feed
+		 */
+		function booleanHandler( name, value ){
+			console.log("[onStringMessage] string message received ", value);
+			
+			switch(name){
+				case "seat":
+					$("body").css("backgroundColor", "red");
+					console.log('received source with src: '+ value);
+					break;
+				case "back":
+					$("body").css("backgroundColor", "blue");
+					break;
+			}
+		}
+
+	</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>
