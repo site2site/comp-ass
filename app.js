@@ -6,14 +6,14 @@ var five = require("johnny-five"),
 	config = require("./machine");
 
 //log deltas to the console for debugging thresholds
-var debug = true;
+var debug = false;
 var debug_sensor = 0;
 
 //log deltas to spacebrew
 var sb_debug = true;
 
 //sensor ping frequency
-var pingFreq = 250;
+var pingFreq = 100;
 //array of output buffers
 var buffers = [];
 //array of sensors
