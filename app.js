@@ -71,7 +71,7 @@ function onOpen() {
 	  });
 
 	  buffers[0] = [];
-	  thresholds[0] = 80;
+	  thresholds[0] = 70;
 	  shift_registers[0] = [];
 
 	  fsrs[0].scale([ 0, 100 ]).on("data",function(){
