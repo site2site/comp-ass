@@ -244,10 +244,19 @@ function debounce( fsr_index, new_value ){
     }
   });
 
+  check = math.round(total/shift_register_max);
+  if (check > 0){
+  	return true;
+  } else {
+  	return false;
+  }
+
+  /*
   if( (total/2) >= (shift_register_max/2) ){
     return true;
   }else{
     return false;
-  } 
+  }
+  */
 }
 
