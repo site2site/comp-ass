@@ -72,6 +72,7 @@ function onOpen() {
 	    occupySeat = debounce(0 ,occupied( 0, this.value ));
 	    if (occupySeat==true){
 	    	sb.send("seat", "boolean", occupySeat);
+	    	console.log('back: '+occupySeat)
 	    } else {
 	    	sb.send("seat", "boolean", false);
 	    }
@@ -94,6 +95,7 @@ function onOpen() {
 	    if (occupySeat == true){
 	    	occupyBack = debounce(1, occupied( 1, this.value ));
 	    	sb.send("back", "boolean", occupyBack)
+	    	console.log('back: '+occupyBack)
 	    } else {
 	    	sb.send("back", "boolean", false);
 	    }
