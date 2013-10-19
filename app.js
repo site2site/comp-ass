@@ -106,8 +106,8 @@ function onOpen() {
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
 	    //var oc = occupied( 1, this.value );
+	    var oc = occupied( 1, this.value );
 	    if (occupySeat==true){
-	    	var oc = occupied( 1, this.value );
 	    	sb.send("back", "boolean", oc);
 	    	console.log("back: "+oc);
 	    } else{
