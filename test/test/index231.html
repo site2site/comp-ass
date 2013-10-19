@@ -4,6 +4,14 @@
     <title>Comp-ass Visualization</title>
 
     <meta charset="utf-8">
+    <style>
+#gradient-display {
+        margin: 20px auto 20px 0;
+        width: 600px;
+        height: 30px;
+}
+
+</style>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -45,7 +53,10 @@
 			var target = document.getElementById('test');
 			var gradientMap = "red 30%, blue";
 			GradientMaps.applyGradientMap(target, gradientMap);
+			
+		;
 		}	
+		
 
 		/**
 		 * Function that is called when Spacebrew connection is established
@@ -74,7 +85,7 @@
 					//$("body").css("backgroundColor", "red");
 					setTimeout(function(){
 						$(".seatOff").addClass("seatOn").removeClass("backOff");
-					});
+					}, 1000);
 					
 					console.log('received source with src: '+ value);
 					break;
@@ -82,23 +93,93 @@
 					//$("body").css("backgroundColor", "blue");
 					setTimeout(function(){
 						$(".backOff").addClass("backOn").removeClass("backOff");
-					});
+					}, 1000);
 					break;
 			}
-	}
+						
+		}
+
+// Second Chair 
+
+function booleanHandler( name, value ){
+			console.log("[onStringMessage] string message received ", value);
+			
+			switch(name){
+				case "seat2":
+					//$("body").css("backgroundColor", "red");
+					setTimeout(function(){
+						$(".seatOff2").addClass("seatOn2").removeClass("backOff");
+					}, 1000);
+					
+					console.log('received source with src: '+ value);
+					break;
+				case "back2":
+					//$("body").css("backgroundColor", "blue");
+					setTimeout(function(){
+						$(".backOff2").addClass("backOn2").removeClass("backOff");
+					}, 1000);
+					break;
+			}
+		}
 	</script>
+    
+    <script>
+                function startAnim() {
+                        window.continue_animating = true;
+                        doAnim(100, 5);
+                }
+
+                function stopAnim() {
+                        window.continue_animating = false;
+                }
+
+                function getGradient(val) {
+                        var gradient = "red, yellow " + val + "%, blue " + (100-val) + "%, white";
+
+                        return gradient;
+                }
+
+                function doAnim(val, incr) {
+                        if (!window.continue_animating) return;
+
+                        if (val >= 100) {
+                                val = 99;
+                                incr = -incr;
+                        } else if (val <= 0) {
+                                val = 1;
+                                incr = -incr;
+                        }
+
+            var target = document.getElementById('target');
+                        var gradient = getGradient(val);
+            GradientMaps.applyGradientMap(target, gradient);
+        
+            var gradientDisplay = document.getElementById('gradient-display');
+            gradientDisplay.style['background'] = 
+                '-webkit-linear-gradient(left,' + gradient + ')';
+
+                        val += incr;
+
+                        setTimeout(doAnim, 100, val, incr);
+        }
+
+    </script>
 	</head>
 
 	<body>
-    <div class="backOff"></div>
-    <div class="seatOff"></div>
-    <div class="backOff2"></div>
+    <button onclick="startAnim()">Start Animation</button>
+        <button onclick="stopAnim()">Stop Animation</button>
+    <div id="target" class="backOff"></div>
+    <div  class="seatOff"></div>
+    <div  class="backOff2"></div>
     <div class="seatOff2"></div>
     
     <div class="backOff"></div>
     <div class="seatOff"></div>
     <div class="backOff2"></div>
     <div class="seatOff2"></div>
+    
+    <div id="gradient-display"></div> 
 	</body>
 
 </html>

@@ -73,7 +73,7 @@ a, a:link, a:visited { text-decoration: none; }
 	width: 20%;
 	float: left;
 	height: 600px;
-	background-image: linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+	/* background-image: linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
 background-image: -o-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
 background-image: -moz-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
 background-image: -webkit-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
@@ -85,10 +85,11 @@ background-image: -webkit-gradient(
 	left top,
 	color-stop(0.18, rgb(16,134,92)),
 	color-stop(0.54, rgb(13,227,199))
-); 
+); */
 	border: 10px;
 	
 
+background: url(http://upload.wikimedia.org/wikipedia/commons/2/21/Neophron_percnopterus_-_01.jpg); 
 	
 }
 .seatOff{
@@ -406,4 +407,37 @@ background-image: -webkit-gradient(
 	color-stop(0.32, rgb(107,235,21))
 );
 	border: 10px;
+}
+
+/* ID */
+
+#test {
+	margin: 0px;
+	border: 0px; 
+	transform:none;
+	overflow:hidden; 
+
+	
+	
+}
+#test1 {
+	margin: 0px;
+	border: 0px; 
+	transform:none;
+	overflow:hidden;
+	
+}
+#test2 {
+	margin: 0px;
+	border: 0px; 
+	transform:none;
+	overflow:hidden;
+	
+}
+#test3 {
+	margin: 0px;
+	border: 0px; 
+	transform:none;
+	overflow:hidden;
+	
 }
