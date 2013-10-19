@@ -45,8 +45,8 @@ sb.addPublish("seat", "boolean", "false");		// publish the serialized binary ima
 sb.addPublish("back", "boolean", "false");
 
 if (sb_debug==true){
-	sb.addPublish("seat_val", "number", 0.0);
-	sb.addPublish("back_val", "number", 0.0);
+	//sb.addPublish("seat_val", "number", 0.0);
+	//sb.addPublish("back_val", "number", 0.0);
 }
 
 sb.onOpen = onOpen;
@@ -252,9 +252,9 @@ function occupied( fsr_index, value ){
 
   if (sb_debug==true){
   	if (fsr_index == 0){
-  		sb.send("seat_val", "number", delta);
+  		//sb.send("seat_val", "number", delta);
   	} else {
-  		sb.send("back_val", "number", delta);
+  		//sb.send("back_val", "number", delta);
   	}
   }
 
