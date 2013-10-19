@@ -68,8 +68,8 @@ function onOpen() {
 
 	  fsrs[0].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
-	    var oc = occupied( 0, this.value );
-	    occupySeat = debounce(0,oc)
+	    //var oc = occupied( 0, this.value );
+	    occupySeat = debounce(0 ,occupied( 0, this.value ));
 	    if (occupySeat==true){
 	    	sb.send("seat", "boolean", occupySeat);
 	    } else {
@@ -90,9 +90,9 @@ function onOpen() {
 	  
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
-	    var oc = occupied( 1, this.value );
+	    //var oc = occupied( 1, this.value );
 	    if (occupySeat == true){
-	    	occupyBack = debounce(1,oc);
+	    	occupyBack = debounce(1, occupied( 1, this.value ));
 	    	sb.send("back", "boolean", occupyBack)
 	    } else {
 	    	sb.send("back", "boolean", false);
@@ -231,7 +231,7 @@ function occupied( fsr_index, value ){
 
 //de-bounce function for occupancy
 function debounce( fsr_index, new_value ){
-  if(shift_registers[ fsr_index ].length >= shift_register_max){
+  if(shift_registers[ fsr_index ].length > shift_register_max){
     shift_registers[ fsr_index ].shift();
   }
 
