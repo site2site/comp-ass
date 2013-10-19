@@ -77,6 +77,7 @@ function onOpen() {
 	    	console.log('seat: '+occupySeat)
 	    } else {
 	    	sb.send("seat", "boolean", false);
+	    	console.log('seat: '+occupySeat);
 	    }
 	  });
 
@@ -100,6 +101,7 @@ function onOpen() {
 	    	console.log('back: '+occupyBack)
 	    } else {
 	    	sb.send("back", "boolean", false);
+	    	console.log('back: '+occupyBack);
 	    }
 	  });
 
