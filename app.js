@@ -9,6 +9,9 @@ var five = require("johnny-five"),
 var debug = true;
 var debug_sensor = 0;
 
+//log deltas to spacebrew
+var sb_debug = true;
+
 //sensor ping frequency
 var pingFreq = 250;
 //array of output buffers
@@ -41,7 +44,10 @@ sb = new Spacebrew.Client( config.server, config.name, config.description );  //
 sb.addPublish("seat", "boolean", "false");		// publish the serialized binary image data
 sb.addPublish("back", "boolean", "false");
 
-
+if (sb_debug==true){
+	sb.addPublish("seat_val", "number", 0.0);
+	sb.addPublish("back_val", "number", 0.0);
+}
 
 sb.onOpen = onOpen;
 
@@ -235,6 +241,14 @@ function occupied( fsr_index, value ){
     if (fsr_index == debug_sensor){
           console.log(fsr_index+ ': '+ delta);
     }
+  }
+
+  if (sb_debug==true){
+  	if (fsr_index == 0){
+  		sb.send("seat_val", "number", delta);
+  	} else {
+  		sb.send("back_val", "number", delta);
+  	}
   }
 
   //check if value range is within occupancy threshold
