@@ -77,9 +77,9 @@ function onOpen() {
 	  fsrs[0].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
 	    //var oc = occupied( 0, this.value );
-	    oc = debounce(0, occupied( 0, this.value ));
-	    sb.send("seat", "boolean", debounce(0, occupied( 0, this.value )))
-	    console.log("seat: "+oc)
+	    var oc = debounce(0, occupied( 0, this.value ));
+	    sb.send("seat", "boolean", oc);
+	    console.log(oc);
 	    /*
 	    occupySeat = debounce(0 ,occupied( 0, this.value ));
 	    if (occupySeat==true){
@@ -106,9 +106,9 @@ function onOpen() {
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
 	    //var oc = occupied( 1, this.value );
-	    oc = debounce(1, occupied( 1, this.value ));
-	    sb.send("back", "boolean", debounce(1, occupied( 1, this.value )))
-	    console.log("back: "+oc)
+	    var oc = debounce(1, occupied( 1, this.value ));
+	    sb.send("back", "boolean", oc);
+	    console.log(oc);
 	    /*
 	    if (occupySeat == true){
 	    	occupyBack = debounce(1, occupied( 1, this.value ));
