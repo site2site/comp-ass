@@ -22,7 +22,7 @@ var occupySeat = false;
 var occupyBack = false;
 // shift register for deboucing
 var shift_registers = [];
-var shift_register_max = 10;
+var shift_register_max = 20;
 
 
 
@@ -70,7 +70,11 @@ function onOpen() {
 	    //console.log("seat_left: " + this.value);
 	    var oc = occupied( 0, this.value );
 	    occupySeat = debounce(0,oc)
-	    sb.send("seat", "boolean", occupySeat);  
+	    if (occupySeat==true){
+	    	sb.send("seat", "boolean", occupySeat);
+	    } else {
+	    	sb.send("seat", "boolean", false);
+	    }
 	  });
 
 
@@ -81,7 +85,7 @@ function onOpen() {
 	  });
 
 	  buffers[1] = [];
-	  thresholds[1] = 80;
+	  thresholds[1] = 90;
 	  shift_registers[1] = [];
 	  
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
