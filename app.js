@@ -82,6 +82,7 @@ function onOpen() {
 
 	  buffers[1] = [];
 	  thresholds[1] = 70;
+	  shift_registers[1] = [];
 	  
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
@@ -226,14 +227,14 @@ function occupied( fsr_index, value ){
 
 //de-bounce function for occupancy
 function debounce( fsr_index, new_value ){
-  if(shift_register[ fsr_index ].length >= shift_register_max){
-    shift_register[ fsr_index ].shift();
+  if(shift_registers[ fsr_index ].length >= shift_register_max){
+    shift_registers[ fsr_index ].shift();
   }
 
-  shift_register[ fsr_index ].push(new_value);
+  shift_registers[ fsr_index ].push(new_value);
 
   var total = 0;
-  shift_register[ fsr_index ].forEach(function(val){
+  shift_registers[ fsr_index ].forEach(function(val){
     if(val == true){
       total++;
     }
