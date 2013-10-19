@@ -70,70 +70,169 @@ a, a:link, a:visited { text-decoration: none; }
 /* ----------- Seat CSS ------------ */
 
 .backOff{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #000;
+	background-image: linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -o-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -moz-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -webkit-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -ms-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.18, rgb(16,134,92)),
+	color-stop(0.54, rgb(13,227,199))
+);
 	border: 10px;
+	
 }
 .seatOff{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #0F0;
+	background-image: linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -o-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -moz-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -webkit-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -ms-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.18, rgb(16,134,92)),
+	color-stop(0.54, rgb(112,204,192))
+);
 	border: 10px;
+	
 }
 
 /* ----------- Basic On Trigger ------------ */
 
 .backOn{
-	width: 25%;
+	width: 20%;
 	float: left;
-	margin-left: 5px; 
 	height: 600px;
-	background-color: #009;
+	background-image: linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -o-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -moz-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -webkit-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+background-image: -ms-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(13,227,199) 54%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.18, rgb(16,134,92)),
+	color-stop(0.54, rgb(13,227,199))
+);
 	border: 10px;
+
 }
 .seatOn{
-	width: 25%;
+	width: 30%;
 	float: left;
-	margin-left: 5px;
 	height: 600px;
-	background-color: #0F6;
+	background-image: linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -o-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -moz-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -webkit-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+background-image: -ms-linear-gradient(bottom, rgb(16,134,92) 18%, rgb(112,204,192) 54%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.18, rgb(16,134,92)),
+	color-stop(0.54, rgb(112,204,192))
+);
 	border: 10px;
+	
 }
 
 /* ----------- Trigger After 10 Seconds ------------ */
 
 .backOn10s{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #F33;
+	background-image: linear-gradient(bottom, rgb(171,3,171) 21%, rgb(255,43,85) 57%);
+background-image: -o-linear-gradient(bottom, rgb(171,3,171) 21%, rgb(255,43,85) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(171,3,171) 21%, rgb(255,43,85) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(171,3,171) 21%, rgb(255,43,85) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(171,3,171) 21%, rgb(255,43,85) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(171,3,171)),
+	color-stop(0.57, rgb(255,43,85))
+);
 	border: 10px;
+	
 }
 .seatOn10s{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #36C;
+	background-image: linear-gradient(bottom, rgb(40,143,30) 21%, rgb(114,255,43) 57%);
+background-image: -o-linear-gradient(bottom, rgb(40,143,30) 21%, rgb(114,255,43) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(40,143,30) 21%, rgb(114,255,43) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(40,143,30) 21%, rgb(114,255,43) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(40,143,30) 21%, rgb(114,255,43) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(40,143,30)),
+	color-stop(0.57, rgb(114,255,43))
+);
 	border: 10px;
 }
 
 /* ----------- Trigger After 30 Seconds ------------ */
 
 .backOn30s{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #09F;
+	background-image: linear-gradient(bottom, rgb(171,3,3) 21%, rgb(255,43,43) 57%);
+background-image: -o-linear-gradient(bottom, rgb(171,3,3) 21%, rgb(255,43,43) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(171,3,3) 21%, rgb(255,43,43) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(171,3,3) 21%, rgb(255,43,43) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(171,3,3) 21%, rgb(255,43,43) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(171,3,3)),
+	color-stop(0.57, rgb(255,43,43))
+);
 	border: 10px;
 }
 .seatOn30s{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #936;
+	background-image: linear-gradient(bottom, rgb(30,126,143) 21%, rgb(135,43,255) 57%);
+background-image: -o-linear-gradient(bottom, rgb(30,126,143) 21%, rgb(135,43,255) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(30,126,143) 21%, rgb(135,43,255) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(30,126,143) 21%, rgb(135,43,255) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(30,126,143) 21%, rgb(135,43,255) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(30,126,143)),
+	color-stop(0.57, rgb(135,43,255))
+);
 	border: 10px;
 }
 
@@ -142,17 +241,41 @@ a, a:link, a:visited { text-decoration: none; }
 /* ----------- Seat 2 CSS ------------ */
 
 .backOff2{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #000;
+	background-image: linear-gradient(bottom, rgb(117,11,19) 26%, rgb(230,21,21) 54%);
+background-image: -o-linear-gradient(bottom, rgb(117,11,19) 26%, rgb(230,21,21) 54%);
+background-image: -moz-linear-gradient(bottom, rgb(117,11,19) 26%, rgb(230,21,21) 54%);
+background-image: -webkit-linear-gradient(bottom, rgb(117,11,19) 26%, rgb(230,21,21) 54%);
+background-image: -ms-linear-gradient(bottom, rgb(117,11,19) 26%, rgb(230,21,21) 54%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.26, rgb(117,11,19)),
+	color-stop(0.54, rgb(230,21,21))
+);
 	border: 10px;
 }
 .seatOff2{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #0F0;
+	background-image: linear-gradient(bottom, rgb(181,2,17) 26%, rgb(235,21,21) 32%);
+background-image: -o-linear-gradient(bottom, rgb(181,2,17) 26%, rgb(235,21,21) 32%);
+background-image: -moz-linear-gradient(bottom, rgb(181,2,17) 26%, rgb(235,21,21) 32%);
+background-image: -webkit-linear-gradient(bottom, rgb(181,2,17) 26%, rgb(235,21,21) 32%);
+background-image: -ms-linear-gradient(bottom, rgb(181,2,17) 26%, rgb(235,21,21) 32%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.26, rgb(181,2,17)),
+	color-stop(0.32, rgb(235,21,21))
+);
 	border: 10px;
 }
 
@@ -161,17 +284,41 @@ a, a:link, a:visited { text-decoration: none; }
 /* ----------- Basic On Trigger 2 ------------ */
 
 .backOn2{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #009;
+	background-image: linear-gradient(bottom, rgb(173,145,2) 21%, rgb(255,227,43) 57%);
+background-image: -o-linear-gradient(bottom, rgb(173,145,2) 21%, rgb(255,227,43) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(173,145,2) 21%, rgb(255,227,43) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(173,145,2) 21%, rgb(255,227,43) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(173,145,2) 21%, rgb(255,227,43) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(173,145,2)),
+	color-stop(0.57, rgb(255,227,43))
+);
 	border: 10px;
 }
 .seatOn2{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #0F6;
+	background-image: linear-gradient(right , rgb(179,4,159) 26%, rgb(235,21,135) 32%);
+background-image: -o-linear-gradient(right , rgb(179,4,159) 26%, rgb(235,21,135) 32%);
+background-image: -moz-linear-gradient(right , rgb(179,4,159) 26%, rgb(235,21,135) 32%);
+background-image: -webkit-linear-gradient(right , rgb(179,4,159) 26%, rgb(235,21,135) 32%);
+background-image: -ms-linear-gradient(right , rgb(179,4,159) 26%, rgb(235,21,135) 32%);
+
+background-image: -webkit-gradient(
+	linear,
+	right top,
+	left top,
+	color-stop(0.26, rgb(179,4,159)),
+	color-stop(0.32, rgb(235,21,135))
+);
 	border: 10px;
 }
 
@@ -180,33 +327,81 @@ a, a:link, a:visited { text-decoration: none; }
 /* ----------- Trigger After 10 Seconds 2 ------------ */
 
 .backOn10s2{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #F33;
+	background-image: linear-gradient(bottom, rgb(36,173,2) 21%, rgb(43,255,75) 57%);
+background-image: -o-linear-gradient(bottom, rgb(36,173,2) 21%, rgb(43,255,75) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(36,173,2) 21%, rgb(43,255,75) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(36,173,2) 21%, rgb(43,255,75) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(36,173,2) 21%, rgb(43,255,75) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(36,173,2)),
+	color-stop(0.57, rgb(43,255,75))
+);
 	border: 10px;
 }
 .seatOn10s2{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #36C;
+	background-image: linear-gradient(right , rgb(30,4,179) 26%, rgb(35,21,235) 32%);
+background-image: -o-linear-gradient(right , rgb(30,4,179) 26%, rgb(35,21,235) 32%);
+background-image: -moz-linear-gradient(right , rgb(30,4,179) 26%, rgb(35,21,235) 32%);
+background-image: -webkit-linear-gradient(right , rgb(30,4,179) 26%, rgb(35,21,235) 32%);
+background-image: -ms-linear-gradient(right , rgb(30,4,179) 26%, rgb(35,21,235) 32%);
+
+background-image: -webkit-gradient(
+	linear,
+	right top,
+	left top,
+	color-stop(0.26, rgb(30,4,179)),
+	color-stop(0.32, rgb(35,21,235))
+);
 	border: 10px;
 }
 
 /* ----------- Trigger After 30 Seconds ------------ */
 
 .backOn30s2{
-	width: 25%;
+	width: 20%;
 	float: left;
 	height: 600px;
-	background-color: #09F;
+	background-image: linear-gradient(bottom, rgb(3,17,171) 21%, rgb(43,138,255) 57%);
+background-image: -o-linear-gradient(bottom, rgb(3,17,171) 21%, rgb(43,138,255) 57%);
+background-image: -moz-linear-gradient(bottom, rgb(3,17,171) 21%, rgb(43,138,255) 57%);
+background-image: -webkit-linear-gradient(bottom, rgb(3,17,171) 21%, rgb(43,138,255) 57%);
+background-image: -ms-linear-gradient(bottom, rgb(3,17,171) 21%, rgb(43,138,255) 57%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.21, rgb(3,17,171)),
+	color-stop(0.57, rgb(43,138,255))
+);
 	border: 10px;
 }
 .seatOn30s2{
-	width: 25%;
+	width: 30%;
 	float: left;
 	height: 600px;
-	background-color: #936;
+	background-image: linear-gradient(right bottom, rgb(168,179,7) 75%, rgb(107,235,21) 32%);
+background-image: -o-linear-gradient(right bottom, rgb(168,179,7) 75%, rgb(107,235,21) 32%);
+background-image: -moz-linear-gradient(right bottom, rgb(168,179,7) 75%, rgb(107,235,21) 32%);
+background-image: -webkit-linear-gradient(right bottom, rgb(168,179,7) 75%, rgb(107,235,21) 32%);
+background-image: -ms-linear-gradient(right bottom, rgb(168,179,7) 75%, rgb(107,235,21) 32%);
+
+background-image: -webkit-gradient(
+	linear,
+	right bottom,
+	left top,
+	color-stop(0.75, rgb(168,179,7)),
+	color-stop(0.32, rgb(107,235,21))
+);
 	border: 10px;
 }
