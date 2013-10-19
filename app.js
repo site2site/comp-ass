@@ -9,6 +9,8 @@ var five = require("johnny-five"),
 var debug = false;
 var debug_sensor = 0;
 
+//sensor ping frequency
+var pingFreq = 250;
 //array of output buffers
 var buffers = [];
 //array of sensors
@@ -59,7 +61,7 @@ function onOpen() {
 	  //FSR 00
 	  fsrs[0] = new five.Sensor({
 	    pin: "A0",
-	    freq: 100
+	    freq: pingFreq
 	  });
 
 	  buffers[0] = [];
@@ -82,11 +84,11 @@ function onOpen() {
 	  //FSR 01
 	  fsrs[1] = new five.Sensor({
 	    pin: "A1",
-	    freq: 100
+	    freq: pingFreq
 	  });
 
 	  buffers[1] = [];
-	  thresholds[1] = 90;
+	  thresholds[1] = 80;
 	  shift_registers[1] = [];
 	  
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
