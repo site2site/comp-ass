@@ -244,7 +244,7 @@ function debounce( fsr_index, new_value ){
     }
   });
 
-  check = math.round(total/shift_register_max);
+  check = Math.round(total/shift_register_max);
   if (check > 0){
   	return true;
   } else {
