@@ -6,12 +6,8 @@ var five = require("johnny-five"),
 	config = require("./machine");
 
 //log deltas to the console for debugging thresholds
-var debug = true;
+var debug = false;
 var debug_sensor = 0;
-
-
-
-    //led;
 
 //array of output buffers
 var buffers = [];
@@ -20,7 +16,13 @@ var fsrs = [];
 //array of thresholds values
 var thresholds = [];
 //length of buffer array
-var MAX_BUFFER_LENGTH = 5;
+var MAX_BUFFER_LENGTH = 15;
+//boolean for on/off buffer
+var occupySeat = false;
+var occupyBack = false;
+// shift register for deboucing
+var shift_registers = [];
+var shift_register_max = 10;
 
 
 
@@ -61,17 +63,14 @@ function onOpen() {
 	  });
 
 	  buffers[0] = [];
-	  thresholds[0] = 40;
+	  thresholds[0] = 70;
+	  shift_registers[0] = [];
 
 	  fsrs[0].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
 	    var oc = occupied( 0, this.value );
-	    if(oc == true){
-	      console.log( 'occupied fsr 0' );
-	      sb.send("seat", "boolean", "true");
-	    }else{
-	    	sb.send("seat", "boolean", "false");
-	    }   
+	    occupySeat = debounce(0,oc)
+	    sb.send("seat", "boolean", occupySeat);  
 	  });
 
 
@@ -82,16 +81,16 @@ function onOpen() {
 	  });
 
 	  buffers[1] = [];
-	  thresholds[1] = 60;
+	  thresholds[1] = 70;
 	  
 	  fsrs[1].scale([ 0, 100 ]).on("data",function(){
 	    //console.log("seat_left: " + this.value);
 	    var oc = occupied( 1, this.value );
-	    if(oc == true){
-	      console.log( 'occupied fsr 1' );
-	      sb.send("back", "boolean", "true");
-	    }else{
-	    	sb.send("back", "boolean", "false");
+	    if (occupySeat == true){
+	    	occupyBack = debounce(1,oc);
+	    	sb.send("back", "boolean", occupyBack)
+	    } else {
+	    	sb.send("back", "boolean", false);
 	    }
 	  });
 
@@ -223,5 +222,27 @@ function occupied( fsr_index, value ){
   }else{
     return false;
   }
+}
+
+//de-bounce function for occupancy
+function debounce( fsr_index, new_value ){
+  if(shift_register[ fsr_index ].length >= shift_register_max){
+    shift_register[ fsr_index ].shift();
+  }
+
+  shift_register[ fsr_index ].push(new_value);
+
+  var total = 0;
+  shift_register[ fsr_index ].forEach(function(val){
+    if(val == true){
+      total++;
+    }
+  });
+
+  if( (total/2) >= (shift_register_max/2) ){
+    return true;
+  }else{
+    return false;
+  } 
 }
 
