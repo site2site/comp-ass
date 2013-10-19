@@ -7,7 +7,7 @@ var five = require("johnny-five"),
 
 //log deltas to the console for debugging thresholds
 var debug = true;
-var debug_sensor = 0;
+var debug_sensor = 1;
 
 //array of output buffers
 var buffers = [];
