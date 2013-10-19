@@ -6,8 +6,8 @@ var five = require("johnny-five"),
 	config = require("./machine");
 
 //log deltas to the console for debugging thresholds
-var debug = false;
-var debug_sensor = 0;
+var debug = true;
+var debug_sensor = 1;
 
 //log deltas to spacebrew
 var sb_debug = true;
