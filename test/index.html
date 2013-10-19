@@ -70,16 +70,16 @@
 			
 			switch(name){
 				case "seat":
-					$("body").css("backgroundColor", "red");
-					
+					$(".seatOff").css("backgroundColor", "red");
+					//setTimeout(function(){
 											
-					
 					console.log('received source with src: '+ value);
 					break;
 				case "back":
-					$("body").css("backgroundColor", "blue");
-									
-					
+					$(".backOff").css("backgroundColor", "blue");
+					//setTimeout(function(){
+						
+				
 					break;
 			}
 	}
@@ -87,7 +87,15 @@
 	</head>
 
 	<body>
+    <div class="backOff"></div>
+    <div class="seatOff"></div>
+    <div class="backOff2"></div>
+    <div class="seatOff2"></div>
     
+    <div class="backOff"></div>
+    <div class="seatOff"></div>
+    <div class="backOff2"></div>
+    <div class="seatOff2"></div>
 	</body>
 
 </html>
