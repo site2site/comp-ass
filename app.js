@@ -6,8 +6,8 @@ var five = require("johnny-five"),
 	config = require("./machine");
 
 //log deltas to the console for debugging thresholds
-var debug = true;
-var debug_sensor = 1;
+var debug = false;
+var debug_sensor = 0;
 
 //array of output buffers
 var buffers = [];
@@ -72,7 +72,7 @@ function onOpen() {
 	    occupySeat = debounce(0 ,occupied( 0, this.value ));
 	    if (occupySeat==true){
 	    	sb.send("seat", "boolean", occupySeat);
-	    	console.log('back: '+occupySeat)
+	    	console.log('seat: '+occupySeat)
 	    } else {
 	    	sb.send("seat", "boolean", false);
 	    }
