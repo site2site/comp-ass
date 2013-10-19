@@ -24,7 +24,7 @@ var thresholds = [];
 var MAX_BUFFER_LENGTH = 15;
 //boolean for on/off buffer
 var occupySeat = false;
-var occupyBack = false;
+//var occupyBack = false;
 // shift register for deboucing
 var shift_registers = [];
 var shift_register_max = 20;
@@ -78,8 +78,8 @@ function onOpen() {
 	    //console.log("seat_left: " + this.value);
 	    //var oc = occupied( 0, this.value );
 	    occupySeat = occupied( 0, this.value );
-	    sb.send("seat", "boolean", oc);
-	    console.log("seat: "+oc);
+	    sb.send("seat", "boolean", occupySeat);
+	    console.log("seat: "+occupySeat);
 	    /*
 	    occupySeat = debounce(0 ,occupied( 0, this.value ));
 	    if (occupySeat==true){
